@@ -9,6 +9,6 @@ It uses the following technologies:
 + NodeJS
 + Express
 + MongoDB + Mongoose
-+ Passport + Bcrypt.js
++ Passport + Bcrypt.js + Csurf
 + Stripes
 + JS + JQuery

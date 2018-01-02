@@ -5,10 +5,25 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
+var mongoose = require('mongoose');
 var index = require('./routes/index');
-var users = require('./routes/users');
-
+var config = require('./config/database');
+var session = require('express-session');
 var app = express();
+
+mongoose.connect(config.database);
+let db = mongoose.connection;
+
+
+// Check connection
+db.once('open', function(){
+  console.log('Connected to MongoDB');
+});
+
+
+db.on('error', function(err){
+  console.log(err);
+});
 
 // view engine setup
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
@@ -21,6 +36,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(session({
+  secret: 'KitKatisGod',
+  resave: false,
+  saveUninitialized: false
+}));
+
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
@@ -29,6 +51,9 @@ app.use('/scripts', express.static(path.join(__dirname, './node_modules')));
 
 let products= require('./routes/products');
 app.use('/products', products);
+
+let users= require('./routes/users');
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
