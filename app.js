@@ -5,10 +5,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
+var expressValidator = require('express-validator');
+var session = require('express-session');
 var mongoose = require('mongoose');
+var MongoStore = require('connect-mongo')(session);
 var index = require('./routes/index');
 var config = require('./config/database');
-var session = require('express-session');
+require('./config/passport');
+
+var passport = require('passport');
+var flash = require('connect-flash');
+
 var app = express();
 
 mongoose.connect(config.database);
@@ -35,13 +42,30 @@ app.set('view engine', '.hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressValidator());
 app.use(cookieParser());
 
 app.use(session({
   secret: 'KitKatisGod',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection
+  }),
+  cookie: {
+    maxAge: 180 * 60 * 1000
+  }
 }));
+
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function(req, res, next){
+  res.locals.login = req.isAuthenticated();
+  res.locals.session = req.session;
+  next();
+});
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 

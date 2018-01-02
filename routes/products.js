@@ -15,31 +15,6 @@ router.get('/*', function(req,res){
   });
 
 });
-router.get('/bathroom', function(req,res){
-  res.render('shop/products',{
-    title: 'Bathroom'
-  });
-});
-router.get('/closet', function(req,res){
-  res.render('shop/products',{
-    title: 'Closet'
-  });
-});
-router.get('/kitchen', function(req,res){
-  res.render('shop/products',{
-    title: 'Kitchen'
-  });
-});
-router.get('/bedroom', function(req,res){
-  res.render('shop/products',{
-    title: 'Bedroom'
-  });
-});
 
-router.get('/human_quarters', function(req,res){
-  res.render('shop/products',{
-    title: 'Human\'s Quarters'
-  });
-});
-
+//router.get('/add-to-cart')
 module.exports=router;
