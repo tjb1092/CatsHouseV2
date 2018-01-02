@@ -1,0 +1,138 @@
+.img-brand{
+  width:130px;
+}
+.navbar{
+  i {
+    color: $gray-700;
+    font-size: 22px;
+    //padding-left: 20px;
+    @include hover-focus{
+      color: darken($maincolor,10%);
+      cursor: pointer;
+    }
+  }
+  .navbar-link{
+    @include hover-focus{
+      color: $gray-700;
+    }
+  }
+  .fa{
+    font-size: 22px;
+    color: $maincolor;
+
+  }
+  .fa-shopping-basket{
+    color: $maincolor;
+  }
+}
+
+.jumbotron{
+  background: url(/public/images/LandingImage.jpeg) no-repeat;
+  width: 100%;
+  height: 600px;
+}
+.bottom{
+  padding: 10px 0;
+  .newsletter{
+    //background: $maincolor;
+    text-align: center;
+  }
+  li{
+    text-align: left;
+  }
+  h5{
+    font-size: 15px;
+
+  }
+}
+
+.breadcrumb{
+  background: white;
+
+}
+
+.product{
+  margin: 10px 0;
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+
+  @include hover-focus{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+  }
+  img{
+    margin: 0 0;
+    cursor: pointer;
+  }
+  .card-title{
+    margin: 0  0;
+    @include hover-focus{
+      color: $info;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .review{
+    color:#adb5bd;
+    font-size:14px;
+  }
+  .price{
+    vertical-align: text-center;
+    font-size: 16px;
+  }
+  .rating{
+    margin: 10px 0;
+    i{
+      color: #FFCF40;
+      text-shadow: 0px 0px 1px #000;
+    }
+  }
+}
+
+.filter{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.pagination{
+  margin: 20px 0;
+}
+
+.modal{
+  .form-control{
+    margin-bottom: 10px;
+  }
+}
+
+.signup{
+  //background: lighten($gray-100, 1%);
+  .img-brand{
+    width: 200px;
+  }
+  h3{
+    margin-top: 10px;
+    text-align: center;
+  }
+  margin: 20px 0;
+  border: 2px solid $gray-300;
+  border-radius: 5px;
+  .btn{
+    margin-bottom: 10px;
+  }
+}
+
+.signup_login{
+  position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+footer{
+  padding: 10px 0;
+  background: darken($light,10%);
+}
+@include bg-variant('.bg-main', $maincolor)

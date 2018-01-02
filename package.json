@@ -8,13 +8,15 @@
   "dependencies": {
     "body-parser": "~1.18.2",
     "bootstrap": "^4.0.0-beta.3",
-    "jquery": "*",
-    "popper.js": "*",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "express-handlebars": "^3.0.0",
+    "font-awesome": "^4.7.0",
     "hbs": "~4.0.1",
+    "jquery": "*",
     "morgan": "~1.9.0",
+    "popper.js": "*",
     "serve-favicon": "~2.4.5"
   }
 }
