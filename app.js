@@ -9,12 +9,12 @@ var expressValidator = require('express-validator');
 var session = require('express-session');
 var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
+var passport = require('passport');
+var flash = require('connect-flash');
+
 var index = require('./routes/index');
 var config = require('./config/database');
 require('./config/passport');
-
-var passport = require('passport');
-var flash = require('connect-flash');
 
 var app = express();
 
@@ -45,6 +45,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(cookieParser());
 
+//This fucking cookie only wants to be created if it goes to a Login page... Idk why doe
 app.use(session({
   secret: 'KitKatisGod',
   resave: false,

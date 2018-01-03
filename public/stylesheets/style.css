@@ -8832,7 +8832,8 @@ a.text-dark:focus, a.text-dark:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4); }
   .product img {
     margin: 0 0;
-    cursor: pointer; }
+    cursor: pointer;
+    max-height: 180px; }
   .product .card-title {
     margin: 0  0; }
     .product .card-title:focus, .product .card-title:hover {

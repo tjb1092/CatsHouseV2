@@ -45,7 +45,10 @@
     </li>
 
     <li class="nav-item">
-      <a href="#" class="nav-link"><i class="fa fa-shopping-basket"></i></a>
+      <a href="/products/shopping-cart" class="nav-link">
+        <i class="fa fa-shopping-basket"></i>
+        <span class="badge badge-primary">{{session.cart.totalQty}}</span>
+      </a>
     </li>
 
   </ul>

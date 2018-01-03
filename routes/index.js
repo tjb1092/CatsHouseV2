@@ -6,5 +6,4 @@ router.get('/', function(req, res, next) {
   res.render('shop/index', { title: 'The Cat\'s House' });
 });
 
-
 module.exports = router;
