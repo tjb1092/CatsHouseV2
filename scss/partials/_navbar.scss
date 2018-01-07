@@ -1,0 +1,28 @@
+.img-brand{
+  width:130px;
+}
+
+.navbar{
+  i {
+    color: $gray-700;
+    font-size: 22px;
+    //padding-left: 20px;
+    @include hover-focus{
+      color: darken($maincolor,10%);
+      cursor: pointer;
+    }
+  }
+  .navbar-link{
+    @include hover-focus{
+      color: $gray-700;
+    }
+  }
+  .fa{
+    font-size: 22px;
+    color: $maincolor;
+
+  }
+  .fa-shopping-basket{
+    color: $maincolor;
+  }
+}

@@ -8804,10 +8804,11 @@ a.text-dark:focus, a.text-dark:hover {
 .navbar .fa-shopping-basket {
   color: #eda6ad; }
 
-.jumbotron {
-  background: url(/public/images/LandingImage.jpeg) no-repeat;
-  width: 100%;
-  height: 600px; }
+#LandingPage {
+  background: url(/public/images/LandingImage.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh; }
 
 .bottom {
   padding: 10px 0; }
@@ -8835,22 +8836,26 @@ a.text-dark:focus, a.text-dark:hover {
     cursor: pointer;
     max-height: 180px; }
   .product .card-title {
-    margin: 0  0; }
+    margin: 0  0;
+    color: black; }
     .product .card-title:focus, .product .card-title:hover {
       color: #17a2b8;
       text-decoration: underline;
       cursor: pointer; }
-  .product .review {
-    color: #adb5bd;
-    font-size: 14px; }
-  .product .price {
-    vertical-align: text-center;
-    font-size: 16px; }
-  .product .rating {
-    margin: 10px 0; }
-    .product .rating i {
-      color: #FFCF40;
-      text-shadow: 0px 0px 1px #000; }
+
+.review {
+  color: #adb5bd;
+  font-size: 14px; }
+
+.price {
+  vertical-align: text-center;
+  font-size: 16px; }
+
+.rating {
+  margin: 10px 0; }
+  .rating i {
+    color: #FFCF40;
+    text-shadow: 0px 0px 1px #000; }
 
 .filter {
   position: -webkit-sticky;
@@ -8860,9 +8865,6 @@ a.text-dark:focus, a.text-dark:hover {
 
 .pagination {
   margin: 20px 0; }
-
-.modal .form-control {
-  margin-bottom: 10px; }
 
 .signup {
   margin: 20px 0;
@@ -8882,9 +8884,59 @@ a.text-dark:focus, a.text-dark:hover {
   bottom: 0;
   width: 100%; }
 
+.ScrollThumbnail {
+  margin: 5px 0; }
+  .ScrollThumbnail:focus, .ScrollThumbnail:hover {
+    opacity: 0.8;
+    cursor: pointer; }
+
+.features {
+  margin-top: 10px; }
+
+.addingToCart {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 7px; }
+  .addingToCart input {
+    width: 40px !important;
+    text-align: center;
+    border-radius: 0px !important;
+    background-color: white !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+    .addingToCart input:focus, .addingToCart input:hover {
+      cursor: default !important; }
+  .addingToCart .buttonleft {
+    border-radius: 0.25rem 0 0 0.25rem !important; }
+  .addingToCart .buttonright {
+    border-radius: 0 0.25rem 0.25rem 0 !important; }
+  .addingToCart .button-addtocart {
+    margin-top: 10px; }
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 150px;
+  height: 100px; }
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  visibility: hidden;
+  /*set the size of the result div:*/
+  width: 100%;
+  height: 300px; }
+
 footer {
   padding: 10px 0;
   background: #dae0e5; }
+
+.modal .form-control {
+  margin-bottom: 10px; }
 
 .bg-main {
   background-color: #eda6ad !important; }

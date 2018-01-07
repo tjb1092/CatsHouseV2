@@ -14,12 +14,12 @@ var products = [
   }),
   new Product({
     imagePath: '/public/images/blackKitty.jpeg',
-    title: 'Snowy Kit Kat',
+    title: 'Snowy KitKat',
     price: 69
   }),
   new Product({
     imagePath: '/public/images/chakchak.jpeg',
-    title: 'Comrade Chak Chak',
+    title: 'Comrade Chak-Chak',
     price: 69
   }),
   new Product({

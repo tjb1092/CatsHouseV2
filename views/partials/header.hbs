@@ -12,12 +12,9 @@
         Shop
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/products/bathroom">Bathroom</a>
-        <a class="dropdown-item" href="/products/closet">Closet</a>
-        <a class="dropdown-item" href="/products/kitchen">Kitchen</a>
-        <a class="dropdown-item" href="/products/bedroom">Bedroom</a>
-        <a class="dropdown-item" href="/products/living_room">Living Room</a>
-        <a class="dropdown-item" href="/products/human_quarters">Human's Quarters</a>
+        {{# each categories }}
+        <a class="dropdown-item" href="/products/{{this.route}}">{{this.name}}</a>
+        {{/each}}
       </div>
     </li>
 

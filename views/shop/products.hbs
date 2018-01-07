@@ -23,20 +23,26 @@
            {{# each products }}
            <div class="col-md-4 col-sm-6">
              <div class="card product" style="width: 18rem;">
-               <img class="card-img-top img-fluid" src="{{this.imagePath}}" alt="Card image cap">
+               <a href="/products/product/{{this._id}}">
+                 <img class="card-img-top img-fluid" src="{{this.imagePath}}" alt="Card image cap">
+               </a>
                <div class="card-body">
+                 <a href="/products/product/{{this._id}}">
+
                  <h5 class="card-title">{{this.title}}</h5>
+               </a>
                  <div class="rating">
                    <i class="fa fa-star"></i>
                    <i class="fa fa-star"></i>
                    <i class="fa fa-star"></i>
                    <i class="fa fa-star"></i>
                    <i class="fa fa-star"></i>
-                   <a href="#" class="review">69 reviews</a>
+                   <a href="/products/product/{{this._id}}" class="review">69 reviews</a> <!-- Test route to get to individual page -->
                  </div>
                  <div class="price pull-left">
                    <strong>${{this.price}}</strong>
                  </div>
+                 <!-- form here -->
                  <a href="/products/add-to-cart/{{this._id}}" class="btn btn-primary pull-right">Add to Cart</a>
                </div>
              </div>

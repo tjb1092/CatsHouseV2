@@ -1,0 +1,83 @@
+<div class="container">
+
+  <nav aria-label="breadcrumb" class="nav-breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/products/living_room">Living Room</a></li> <!-- Temporary -->
+      <li class="breadcrumb-item active"><a href="#">{{product.title}}</a></li>
+    </ol>
+  </nav>
+
+  <div class="row">
+    <div class="col-md-1">
+      <!--Image Carousel-->
+      <div class="imageScroll">
+        <img src={{product.imagePath}} class="ScrollThumbnail img-fluid" alt="">
+        <img src="/public/images/chakchak.jpeg" class="ScrollThumbnail img-fluid" alt="">
+        <img src="/public/images/blackKitty.jpeg" class="ScrollThumbnail img-fluid" alt="">
+      </div>
+    </div>
+    <div class="col-md-5">
+      <!--Feature Image -->
+      <div class="feature-image">
+        <img src={{product.imagePath}} id="featureImage" class="img-fluid" alt="">
+        <div id="ZoomResult" class="img-zoom-result"></div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <!-- Product Info -->
+      <div class="ProductInfo">
+        <h3>{{product.title}}</h3>
+
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <a href="#reviews" class="review">69 reviews</a> <!-- Test route to get to individual page -->
+        </div>
+        <hr>
+        <div class="price">
+          <strong >${{product.price}}</strong>
+        </div>
+        <div class="inStock">
+          <strong>In Stock</strong>
+        </div>
+        <hr>
+        <div class="features">
+          <h5>Features</h5>
+            <ul>
+              <li>Feature 1</li>
+              <li>Feature 2</li>
+              <li>Feature 3</li>
+              <li>Feature 4</li>
+              <li>Feature 5</li>
+            </ul>
+        </div>
+
+
+      </div>
+
+    </div>
+    <div class="col-md-3">
+      <!-- Cart Details/Sidebar -->
+      <div class="addingToCart">
+        <p>Free Shipping?</p>
+        <form method="POST" class="form-inline" action="/products/add-to-cart/{{product._id}}">
+          <div class="form-group">
+              <div class="btn btn-secondary  buttonleft"><i class="fa fa-minus"></i></div>
+              <input type="text" class="form-control disabled" id="quantity" name="quantity" value="1" readonly>
+              <div class="btn btn-secondary buttonright"><i class="fa fa-plus"></i></div>
+          </div>
+          <button class="btn btn-primary btn-block button-addtocart" type="submit">Add to Cart</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Recommended Products -->
+  <!-- Reviews -->
+  <script src="/public/javascripts/productAnimate.js"></script>

@@ -1,0 +1,61 @@
+
+.ScrollThumbnail{
+  margin: 5px 0;
+  @include hover-focus{
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+
+.features{
+  margin-top: 10px;
+}
+
+.addingToCart{
+  padding: 10px;
+  border: 1px solid $gray-400;
+  border-radius:7px ;
+  input{
+    width: 40px !important;
+    text-align: center;
+    border-radius: 0px !important;
+    background-color: white !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    @include hover-focus{
+      cursor: default !important;
+
+    }
+
+  }
+  .buttonleft{
+    border-radius: $border-radius 0  0 $border-radius !important;
+  }
+  .buttonright{
+    border-radius:0 $border-radius  $border-radius   0 !important;
+  }
+  .button-addtocart{
+    margin-top:10px;
+  }
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 150px;
+  height: 100px;
+}
+
+.img-zoom-result{
+  border: 1px solid #d4d4d4;
+  visibility:hidden;
+  /*set the size of the result div:*/
+  width: 100%;
+  height: 300px;
+}
